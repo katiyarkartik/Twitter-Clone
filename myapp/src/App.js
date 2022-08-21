@@ -4,18 +4,21 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Login from "./Login";
 import Home from "./pages/Home";
+import PhoneSIgnUp from "./pages/PhoneSIgnUp";
+import PhoneSignIn from "./pages/PhoneSignIn";
 function App() {
   const [login, setlogin] = useState(true);
   return (
     <Router>
       <div className="App">
-      {/* <Navbar/> */}
+        {/* <Navbar/> */}
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Login />} />
+          <Route path="/signup-phone" element={<PhoneSIgnUp />}></Route>
+          <Route path="/signin" element={<PhoneSignIn />}></Route>
         </Routes>
       </div>
-    
     </Router>
   );
 }

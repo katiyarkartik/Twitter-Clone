@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { GrTwitter, GrApple } from "react-icons/gr";
+
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -9,6 +10,7 @@ const Login = () => {
   const handleLogin = () => {
     navigate("/");
   };
+
   return (
     <div>
       <div className="login-container">
@@ -32,7 +34,7 @@ const Login = () => {
 
           {/* signup buttons */}
 
-          <div className="signup">
+          {/* <div className="signup">
             <button>
               <div className="signup-contents">
                 <div className="signup-logo">
@@ -41,8 +43,8 @@ const Login = () => {
                 <div className="signup-title">Sign up with Google</div>
               </div>{" "}
             </button>
-          </div>
-          <div className="signup">
+          </div> */}
+          {/* <div className="signup">
             <button>
               <div className="signup-contents">
                 <div className="signup-logo">
@@ -56,11 +58,11 @@ const Login = () => {
                 </div>
               </div>{" "}
             </button>
-          </div>
+          </div> */}
 
           {/* signin button */}
 
-          <p
+          {/* <p
             style={{
               width: "300px",
               textAlign: "center",
@@ -68,10 +70,15 @@ const Login = () => {
             }}
           >
             or
-          </p>
-          <div className="phone" onClick={handleLogin}>
-            <button>Sign up with phone or email</button>
-          </div>
+          </p> */}
+          <Link to="/signup-phone">
+            <div
+              className="phone"
+              //  onClick={handleLogin}
+            >
+              <button>Sign up with phone or email</button>
+            </div>
+          </Link>
           <p
             style={{
               width: "300px",
@@ -87,10 +94,10 @@ const Login = () => {
           </p>
           <div className="signup-login">
             <p>Already have an account? </p>
-            <Link to={"/home"}>
-            <div className="signin-btn">
-              <button>Sign In</button>
-            </div>
+            <Link to={"/signin"}>
+              <div className="signin-btn">
+                <button>Sign In</button>
+              </div>
             </Link>
           </div>
         </div>
