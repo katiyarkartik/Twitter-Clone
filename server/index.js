@@ -19,7 +19,7 @@ mongoose
     useNewUrlParser: true,
   })
   .then(() => {
-    console.log("database connected");
+    console.log("Database connected");
   })
   .catch((e) => console.log(e));
 
