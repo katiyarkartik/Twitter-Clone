@@ -36,7 +36,12 @@ const Home = () => {
               <TbHome />
               <span>Home</span>
             </li>
-
+            <Link to={"/profile"}>
+              <li>
+                <FiUser />
+                <span>Profile</span>
+              </li>
+            </Link>
             <li>
               <FiHash />
               <span>Explore</span>
@@ -57,10 +62,7 @@ const Home = () => {
               <CgNotes />
               <span>Lists</span>
             </li>
-            <li>
-              <FiUser />
-              <span>Profile</span>
-            </li>
+
             <li>
               <CgMoreO />
               <span>More</span>

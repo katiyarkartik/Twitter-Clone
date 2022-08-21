@@ -6,6 +6,7 @@ import Login from "./Login";
 import Home from "./pages/Home";
 import PhoneSIgnUp from "./pages/PhoneSIgnUp";
 import PhoneSignIn from "./pages/PhoneSignIn";
+import Profile from "./pages/Profile";
 function App() {
   const [login, setlogin] = useState(true);
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup-phone" element={<PhoneSIgnUp />}></Route>
           <Route path="/signin" element={<PhoneSignIn />}></Route>
+          <Route path="/profile" element={<Profile/>}/>
         </Routes>
       </div>
     </Router>
