@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 app.use(cors());
 app.use(express.json());
-
+const path = require("path");
 //Mongo URI
 
 const mongoURL = process.env.MONGO_URI;
@@ -126,7 +126,7 @@ app.get("/gettweets", async (req, res) => {
     if (err) console.warn(err);
     console.log(tweet);
     return res.json(tweet);
-  }).sort({ date: -1});
+  }).sort({ date: -1 });
 });
 
 // app.get("/tweetdata").get((req, res) => {
@@ -146,6 +146,18 @@ app.get("/gettweets", async (req, res) => {
 // });
 
 //server port
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join("myapp/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve("myapp", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API in work!");
+  });
+}
+
 app.listen(8000, (req, res) => {
   console.log("running on port 8000");
 });
