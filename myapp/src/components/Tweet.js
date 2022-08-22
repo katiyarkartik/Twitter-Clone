@@ -1,13 +1,15 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import TweetCard from "./TweetCard";
 
 const Tweet = () => {
   const [tweets, settweets] = useState([{}]);
   useEffect(() => {
-    fetch("http://localhost:8000/gettweets")
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
+    axios
+      .get("/gettweets")
+      .then(({ data }) => {
+        if (data) {
+          return data;
         }
       })
       .then((result) => settweets(result));

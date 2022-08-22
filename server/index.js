@@ -113,9 +113,12 @@ app.post("/addtweet", async (req, res) => {
       date,
       addimgUrl,
     });
-    res.send({ status: "ok" });
+
+    res.json({ status: "ok" });
+    res.status(201);
   } catch (error) {
-    res.send({ status: "error" });
+    res.json({ status: "error" });
+    res.status(400);
   }
 });
 app.get("/gettweets", async (req, res) => {
@@ -123,7 +126,7 @@ app.get("/gettweets", async (req, res) => {
     if (err) console.warn(err);
     console.log(tweet);
     return res.json(tweet);
-  });
+  }).sort({ date: -1});
 });
 
 // app.get("/tweetdata").get((req, res) => {

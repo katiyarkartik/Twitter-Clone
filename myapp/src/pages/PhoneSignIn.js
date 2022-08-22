@@ -4,6 +4,7 @@ import "./PhoneSignUp.css";
 import { GrTwitter } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
 function PhoneSIgnUp() {
   let navigate = useNavigate();
   const [name, setname] = useState("");
@@ -17,18 +18,19 @@ function PhoneSIgnUp() {
     console.log(phonenumber);
     console.log(password);
 
-    event.preventDefault();
-    const response = await fetch("http://localhost:8000/login", {
-      method: "POST",
+    const config = {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        phonenumber,
-        password,
-      }),
-    });
-    const data = await response.json();
+    };
+    const bodyobj = {
+      phonenumber,
+      password,
+    };
+
+    event.preventDefault();
+    const { data } = await axios.post("/login", bodyobj, config);
+
     console.log(data);
     if (data.status == "ok") {
       alert("login successfull");

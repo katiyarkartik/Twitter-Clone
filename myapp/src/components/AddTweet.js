@@ -6,6 +6,7 @@ import { AiOutlineFileGif } from "react-icons/ai";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
 import { VscSmiley } from "react-icons/vsc";
 import { GoLocation } from "react-icons/go";
+import axios from "axios";
 const AddTweet = ({ img, name, phonenumber }) => {
   const [tweet, settweet] = useState("");
   const [addimgUrl, setaddimgUrl] = useState("");
@@ -18,23 +19,21 @@ const AddTweet = ({ img, name, phonenumber }) => {
   async function addTweetData(event) {
     event.preventDefault();
     let date = new Date();
-    console.log(img, name, phonenumber, tweet, addimgUrl);
-    const response = await fetch("http://localhost:8000/addtweet", {
-      method: "POST",
+    const config = {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name,
-        phonenumber,
-        img,
-        tweet,
-        date,
-        addimgUrl,
-      }),
-    });
-
-    const data = await response.json();
+    };
+    const bodyobj = {
+      name,
+      phonenumber,
+      img,
+      tweet,
+      date,
+      addimgUrl,
+    };
+    console.log(img, name, phonenumber, tweet, addimgUrl);
+    const { data } = await axios.post("/addtweet", bodyobj, config);
 
     console.log(data);
     alert("tweet added");

@@ -27,6 +27,7 @@ const PostSchema = new mongoose.Schema(
       required: true,
     },
   },
+  // { timestamps: true },
   { collection: "postInfo" }
 );
 mongoose.model("postInfo", PostSchema);

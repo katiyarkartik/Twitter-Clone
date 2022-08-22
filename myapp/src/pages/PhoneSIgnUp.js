@@ -4,6 +4,7 @@ import "./PhoneSignUp.css";
 import { GrTwitter } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
 function PhoneSIgnUp() {
   let navigate = useNavigate();
   const [name, setname] = useState("");
@@ -18,6 +19,18 @@ function PhoneSIgnUp() {
   };
 
   async function registeruser(event) {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const bodyobj = {
+      name,
+      phonenumber,
+      password,
+      imglink,
+    };
+
     event.preventDefault();
     if (
       name === "" ||
@@ -31,21 +44,10 @@ function PhoneSIgnUp() {
     } else if (confirm !== password) {
       alert("Passwords do not match");
     } else {
-      const response = await fetch("http://localhost:8000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          phonenumber,
-          password,
-          imglink,
-        }),
-      });
+      const {data} = await axios.post("/register", bodyobj, config);
 
-      const data = await response.json();
-      
+     
+
       console.log(data);
       alert("Successfully registered. Click ok to go to Login Page");
       navigate("/", { replace: true });
