@@ -1,0 +1,19 @@
+.profile-page{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    padding: 2rem;
+}
+.profile-page-container{
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+.profile-page-cover-photo{
+    width: 100%;
+    height: auto;
+}
+.profile-page-cover-photo img{
+    width: 100%;
+    height: 100%;
+}

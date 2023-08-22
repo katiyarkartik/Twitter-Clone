@@ -1,17 +1,41 @@
 .home{
     display: flex;
+    
+
+    display: flex;
+    height: 100vh;
+    background: #14171A;
+    overflow:auto
    
    
 
 }
-.left-menu{
-    background-color: black;
-    width: 30%;
+.home-body{
+    width: 100%;
     height: 100vh;
-    padding-right: 60px;
-    padding-left: 200px;
-    color: #ffffff;
-    
+    /* margin: 4vh; */
+     display: flex;
+    overflow:auto
+}
+.left-menu{
+  
+   
+
+ 
+   
+    width: 20%;
+    height: 100%;
+    padding: 1rem;
+    border: none;
+    border-style: none;
+    /* margin: 1vh; */
+    /* background-color: brown; */
+    /* background: #232037;
+    width: auto;
+    height: 98%;
+    border-radius: 1rem;
+    border: none;
+    border-style: none; */
  
 }
 .tweet-btn{
@@ -31,12 +55,17 @@
 }
 .center{
 
-   width: 40%;
-   min-height: 100vh;
-   height: 100vh;
+   width: 60%;
+   
+   height: 100%;
    overflow: scroll;
-   background-color: rgb(0, 0, 0);
+   
    color: #657786;
+ 
+  
+    border: none;
+    border-style: none;
+   
 }
 .center::-webkit-scrollbar {
     display: none;
@@ -47,20 +76,21 @@
     height: auto;
     background-color: #484b4e;
 }
-.right-menu{
-    background-color: black;
-    width: 30%;
-   
-    padding-right: 120px;
-    padding-left: 30px;
-    color: #ffffff;
-  padding-top: 20px;
-}
 
+/* .right-menu{
+    margin: 0.9vh;
+    
+    width: 20%;
+    height: 98%;
+    border-radius: 0.5rem;
+    border: none;
+    border-style: none;
+  
+} */
 .search{
     width: 100%;
 }
-.search-box{
+/* .search-box{
     width: 100%;
     padding: 15px;
     border-radius: 100px;
@@ -70,7 +100,7 @@
     font-size: 16px;
     color: #E1E8ED;
   outline: none;
-}
+} */
 .search-box input :active{
     border-color: none;
 }
@@ -159,6 +189,38 @@ color: #AAB8C2;
     }
   } */
 
+  .right-menu{
+    width: 20%;
+    height: 100%;
+    padding: 1rem;
+    padding-top: 2rem;
+    border: none;
+    border-style: none;
+    /* background-color: #ff8c09; */
+
+  }
+  .right-menu-box{
+    width: 100%;
+    height: 100%;
+    /* background-color: #1DA1F2; */
+  }
+  
+  
+   
+
+ 
+   
+   
+    /* margin: 1vh; */
+    /* background-color: brown; */
+    /* background: #232037;
+    width: auto;
+    height: 98%;
+    border-radius: 1rem;
+    border: none;
+    border-style: none; */
+ 
+
 
   @media only screen and (max-width: 1400px){
    .right-menu{
@@ -185,4 +247,12 @@ color: #AAB8C2;
     .center{
         width: 100%;
        }
+       .home-body{
+        width: 100%;
+       
+        margin: 1vh;
+        display: flex;
+        overflow:auto
+    }
+   
    }

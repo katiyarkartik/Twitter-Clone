@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import PhoneSIgnUp from "./pages/PhoneSIgnUp";
 import PhoneSignIn from "./pages/PhoneSignIn";
 import Profile from "./pages/Profile";
+import Homepage from "./pages/Homepage";
+import Chats from "./components/Chats";
+
 function App() {
   const [login, setlogin] = useState(true);
   return (
@@ -18,7 +21,10 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup-phone" element={<PhoneSIgnUp />}></Route>
           <Route path="/signin" element={<PhoneSignIn />}></Route>
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/nav" element={<Navbar/>}></Route>
+          
+          
         </Routes>
       </div>
     </Router>

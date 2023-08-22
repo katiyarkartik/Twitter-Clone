@@ -11,11 +11,13 @@
 .login-left{
     width: 54%;
     background-color:#1DA1F2;
-
+  height: 100vh;
+  padding-top: 150px;
 }
 .login-right{
     width: 46%;
     background-color: #14171A;
+    height: 100vh;
     
     height: "full";
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Routes, useNavigate, Router } from "react-router-dom";
 import "./Home.css";
 import { Route } from "react-router-dom";
 import { GrTwitter } from "react-icons/gr";
@@ -14,7 +14,34 @@ import { TbHome } from "react-icons/tb";
 import Homepage from "./Homepage";
 import News from "../components/News";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Profilecard from "../components/Profilecard";
+import Chats from "../components/Chats";
+import Profilepage from "../components/Profilepage";
+
+import { useAppContext } from "../components/AppContext";
+import Settings from "../components/Settings";
+// import { useData } from "../components/DataContext";
 const Home = () => {
+
+  const { activeComponent } = useAppContext();
+
+
+  const renderActiveComponent = () => {
+    switch (activeComponent) {
+      case 'home':
+        return <Homepage />;
+      case 'settings':
+        return <Settings/>;
+      case 'friends':
+        return <Homepage />;
+      case 'messages':
+        return <Chats />;
+      default:
+        return <Settings/>;
+    }
+  }
+
   let navigate = useNavigate();
   // const [userInfo, setUserInfo] = useState();
   const userInfo = localStorage.getItem("userInfo")
@@ -24,11 +51,19 @@ const Home = () => {
     localStorage.removeItem("userInfo");
     navigate("/");
   }
+  const [page, setpage] = useState("home");
+  
+  console.log(page + "hello");
+
+  // setpage(page);
+  // const { dataFromChild } = useData();
+  // setpage(dataFromChild)
   return (
     <div>
       <div className="home">
-        <div className="left-menu">
-          <ul className="nav-list">
+        <div className="home-body">
+          <div className="left-menu">
+            {/* <ul className="nav-list">
             <li style={{ fontSize: "30px" }}>
               <GrTwitter />{" "}
             </li>
@@ -67,9 +102,10 @@ const Home = () => {
               <CgMoreO />
               <span>More</span>
             </li>
-          </ul>
+          </ul> */}
+            <Navbar  />
 
-          <div className="tweet-btn">
+            {/* <div className="tweet-btn">
             <button onClick={logout}>Logout</button>
           </div>
 
@@ -81,42 +117,19 @@ const Home = () => {
               <p className="name-user">{userInfo && userInfo.name}</p>
               <p className="name-username">{userInfo.phonenumber}</p>
             </div>
-          </div>
-        </div>
-        <div className="vl"></div>
-        <div className="center">
-          <Homepage
-            pic={userInfo.img}
-            name={userInfo.name}
-            phonenumber={userInfo.phonenumber}
-          />
-        </div>
-
-        <div className="vl"></div>
-        <div className="right-menu">
-          <div className="search">
-            <input
-              type="text"
-              className="search-box mainLoginInput"
-              placeholder="Search.."
-            />
-          </div>
-          <div className="whats-happening">
-            <p className="whats-happening-header">What's happening</p>
-            <News />
-          </div>
-          {/* <div className="whotofollow">
-            <p className="whotofollow-header">Who to follow</p>
-            <div className="follow">
-              <div className="follow-img">
-
-                <img src="" alt="" />
-              </div>
-              <div className="follow-btn">
-
-              </div>
-            </div>
           </div> */}
+          </div>
+          <div className="vl"></div>
+          <div className="center">
+          {renderActiveComponent()}
+          </div>
+          <div className="vl"></div>
+          <div className="right-menu">
+            {/* <Profilecard /> */}
+            <div className="right-menu-box">
+              <Profilecard />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -47,7 +47,6 @@ function PhoneSIgnUp() {
       const {data} = await axios.post("/register", bodyobj, config);
 
      
-
       console.log(data);
       alert("Successfully registered. Click ok to go to Login Page");
       navigate("/", { replace: true });

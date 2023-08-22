@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./NewsCard.css";
 const NewsCard = () => {
   return (
@@ -48,9 +49,39 @@ const NewsCard = () => {
         
         <p className="trending-content">#Balde</p>
         <p className="trending-header">26k tweets</p>
+        
       </div>
+      
     </div>
   );
 };
 
 export default NewsCard;
+
+
+/*
+
+import React, { useState, useEffect } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.twitter.com/1.1/trends/place.json?id=1')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      // <h1>{data.title}</h1>
+      // <p>{data.description}</p>
+    </div>
+  );
+}
+*/

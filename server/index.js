@@ -17,6 +17,8 @@ const mongoURL = process.env.MONGO_URI;
 mongoose
   .connect(mongoURL, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    writeConcern: { w: "majority" },
   })
   .then(() => {
     console.log("Database connected");
@@ -81,6 +83,7 @@ app.post(
     }
   })
 );
+const PORT = process.env.PORT || 8000;
 
 app.post("/userdata", async (req, res) => {
   const { token } = req.body;
@@ -129,26 +132,60 @@ app.get("/gettweets", async (req, res) => {
   }).sort({ date: -1 });
 });
 
-// app.get("/tweetdata").get((req, res) => {
-//   Tweet.find().then((foundtweet) => res.json(foundtweet));
-//   console.log(foundtweet);
-// });
+//comments
+require("./models/commentmodel");
 
-// app.post("/addtweet", async (req, res) => {
-//   const { name, phonenumber, img, tweet } = req.body;
-//   Tweet.create({
-//     name,
-//     phonenumber,
-//     img,
-//     tweet,
-//   });
-//   res.send({ status: "ok" });
-// });
+const Com = mongoose.model("commentInfo");
+app.post("/addcomment", async (req, res) => {
+  const { phonenumber, img, comment, commentid, date } = req.body;
 
-//server port
+  try {
+    await Com.create({
+      commentid,
+      comment,
+      phonenumber,
+      img,
+    });
+
+    res.status(201).json({ status: "ok" });
+  } catch (error) {
+    console.error("Error adding comment:", error);
+    res.status(400).json({ status: "error" });
+  }
+});
+
+app.get("/comments", async (req, res) => {
+  try {
+    const comments = await Com.find(); // Fetch all comments from the database
+    res.json(comments);
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    res.status(500).json({ status: "error" });
+  }
+});
+
+
+//Conversation
+
+
+
+app.post('/conversation', async(req,res)=>{
+
+});
+
+
+
+
+
+
+
+
+//
+
+
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join("myapp/build")));
+  app.use(express.static("myapp/build"));
   app.get("*", (req, res) =>
     res.sendFile(path.resolve("myapp", "build", "index.html"))
   );
@@ -158,6 +195,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(8000, (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log("running on port 8000");
 });

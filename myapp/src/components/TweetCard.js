@@ -4,8 +4,10 @@ import { BsSuitHeart ,BsBookmarkDash} from "react-icons/bs";
 import { RiArrowLeftRightLine } from "react-icons/ri";
 import  {FaRegCommentDots} from "react-icons/fa";
 import {AiOutlineHeart} from "react-icons/ai";
+import Com from "./Com";
 
-const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl }) => {
+const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl, date}) => {
+  var comdata=phonenumber+date;
   return (
     <div className="tweetcard">
       <div>
@@ -41,14 +43,10 @@ const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl }) => {
             <AiOutlineHeart /><span>230</span>
           </li>
           <li>
-            <FaRegCommentDots /> <span>66</span>
+           
+            <Com comdata={comdata}/>
           </li>
-          <li>
-            <RiArrowLeftRightLine /> <span>12</span>
-          </li>
-          <li>
-            <BsBookmarkDash /> <span>4</span>
-          </li>
+          
         </ul>
       </div>
       <br />

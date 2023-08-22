@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import TweetCard from "./TweetCard";
 
 const Tweet = () => {
+  const userInfo = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
   const [tweets, settweets] = useState([{}]);
   useEffect(() => {
     axios
@@ -24,8 +27,13 @@ const Tweet = () => {
           phonenumber={tweet.phonenumber}
           tweet={tweet.tweet}
           addimgUrl={tweet.addimgUrl}
+          date={tweet.date}
         />
+       
+      
       ))}
+      
+
     </div>
   );
 };

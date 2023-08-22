@@ -26,6 +26,10 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    like:{
+      type:Number,
+      
+    }
   },
   // { timestamps: true },
   { collection: "postInfo" }

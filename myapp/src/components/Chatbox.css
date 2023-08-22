@@ -1,0 +1,225 @@
+.chatbox{
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    padding: 2rem;
+    /* padding-top: 2rem; */
+ 
+   
+ }
+
+
+
+.chatbox-container{
+    width: 100%;
+    height: 100%;
+    background-color:#1e2227;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(145, 145, 145); */
+}
+
+.left-chatbox{
+    width: 30%;
+    height: 90%;
+    padding:0 20px ;
+ 
+}
+.chat-user-img img{
+    width: 40px ;
+    height: 40px;
+    border-radius: 100px;
+    
+}
+.chat-user-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   /* background-color: antiquewhite; */
+   margin: 0 20px;
+}
+.recievers-data{
+margin-left: 20px;
+/* background-color: aqua; */
+display:block;
+align-items: center;
+}
+.status{
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.chatbox-searchbox{
+    width: 100%;
+    height: 10%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chatbox-searchbox input{
+ 
+    width: 100%;
+    outline : none;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    padding-left: 10px;
+    /* background-color: #acabab; */
+}
+.chatbox-searchbox input::placeholder{
+   
+}
+.chatbox-user-list {
+    /* background-color: aqua; */
+    width: 100%;
+    height: 97%;
+    overflow: auto;
+    padding-top: 10px;
+
+}
+.user-chat-list{
+    width: 100%;
+    height: 100%;
+ /* background-color: bisque; */
+    
+    overflow: scroll;
+    
+}
+.user-chat-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+.chat-user{
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+   
+}
+.chat-user:hover{
+    background-color: rgb(234, 234, 234);
+}
+
+.message-header{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(199, 199, 199);
+}
+.message-divider{
+    margin-left: 5px;
+    width: 300px;
+    height: 1px;
+    
+    background-color: rgb(199,199,199);
+}
+.right-chatbox{
+    width: 70%;
+    height: 100%;
+    background-color: rgb(234, 234, 234);
+    position: relative;
+}
+
+.reciever-info-box{
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(255, 255, 255);
+    
+}
+.type-box{
+  width: 100%;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-top: auto;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.type-box input{
+    width: 90%;
+    height: 100%;
+    outline: none;
+    padding-left: 20px;
+    border: none;
+}
+.type-box button{
+    width: 10%;
+    border: none;
+    border-radius: 0;
+    background: none;
+    font-size: 28px;
+    /* background-color: aqua; */
+    color: rgb(72, 72, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+input:focus{
+    outline: none;
+}
+.reciever-info-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.reciever-info-box img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    margin-left: 20px;
+}
+.reciever-details p{
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2b2f33;
+}
+
+.messages-box{
+    width: 100%;
+    height: 560px;
+    /* background-color: bisque; */
+    overflow: auto;
+    padding: 20px;
+}
+.send-msg{
+    width: auto;
+    min-width: none;
+    width:fit-content;
+    max-width: 75%;
+    padding: 10px;
+    height: auto;
+    background-color: rgb(196, 206, 230);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+.recieve-msg{
+    border-radius: 10px;
+    color: white;
+    width:fit-content;
+    max-width: 75%;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: rgb(3, 129, 207); 
+}

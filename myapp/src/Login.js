@@ -1,10 +1,10 @@
 import React from "react";
 import "./Login.css";
 import { GrTwitter, GrApple } from "react-icons/gr";
-
+import img1 from "../src/images/img1.svg";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate, Link } from "react-router-dom";
-
+import konnect from "../src/images/Konnect.png"
 const Login = () => {
   const navigate = useNavigate();
   const handleLogin = () => {
@@ -17,20 +17,19 @@ const Login = () => {
         {/* Left Side */}
 
         <div className="login-left">
-          <p style={{ fontSize: "70px", fontWeight: "bold" }}>
-            tweet tweet ....
-          </p>
-          <GrTwitter />
+          
+          <img src={img1} alt="" />
         </div>
 
         {/* Right Side */}
 
         <div className="login-right">
           <div className="login-right-twitter-logo">
-            <GrTwitter />
+            {/* <GrTwitter /> */}
+            <img src={konnect} alt="" />
           </div>
           <h1 className="login-h1">Happening now</h1>
-          <h2 className="login-h2">Join Twitter today</h2>
+          <h2 className="login-h2">Join Konnect today</h2>
 
           {/* signup buttons */}
 

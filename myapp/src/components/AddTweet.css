@@ -1,5 +1,5 @@
 .addtweet{
-  margin: 0 20px;
+ margin: 2rem;
 }
 .add-post{
     display: flex;
@@ -21,14 +21,16 @@
 }
 .post-text input{
     width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    background-color: black;
-    color: white;
+    padding: 16px;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
     border-style: none;
-    border-color: black;
+    border-radius: 0.5rem;
     outline: none;
+
 }
+
 .divider{  
     height: 1px;
     margin-left: 70px;
@@ -36,7 +38,7 @@
     background-color: #AAB8C2;
 }
 .add-box-additionals{
-    margin-top: 10px;
+    margin-top: 1rem;
     margin-left: 70px;
     display: flex;
     justify-content: space-between;
@@ -69,9 +71,15 @@
 .img-box input{
     width: 90%;
    padding: 10px;  
-   background-color: black;
+   
+  background-color: white;
    border-style: none;  
    font-size: 16px;
    outline: none;
+   border-radius: 0.5rem;
    color: rgb(103, 103, 103);
+   border: 2px solid #3A374F;
+}
+@media only screen and (max-width:850px){
+    
 }

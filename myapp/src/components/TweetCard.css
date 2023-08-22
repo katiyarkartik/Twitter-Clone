@@ -61,6 +61,6 @@ margin-top: 4px;
    margin-right: auto;
    padding: 10px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #888c8f;
 }

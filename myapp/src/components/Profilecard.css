@@ -1,0 +1,153 @@
+.profile-settings{
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* background: linear-gradient(180deg, #6a88bb 0%, rgba(128, 175, 241, 0.25) 100%); */
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+
+    border-radius: 0.5rem;
+}
+.cover-img img{
+    width: 100%;
+    height: 120px;
+}
+
+
+/* Style for the cover photo */
+.cover-photo {
+    width: 100%;
+    height: 100px; /* 40% of the viewport height */
+    background-color: #abcdef; /* Replace with your desired cover photo color */
+    position: relative;
+    border-radius:  0 0;
+
+  }
+  
+  /* Style for the profile photo */
+  .profile-photo {
+    position: absolute;
+    bottom: -40%; /* Half of the profile photo's height (adjust as needed) */
+    left: 50%; /* Move it to the center horizontally */
+    transform: translateX(-50%);
+    height: 80px; /* Set the height of the profile photo */
+    width: 80px; /* Set the width of the profile photo (same as height for a perfect circle) */
+    background-color: #fedcba; /* Replace with your desired profile photo color */
+    border-radius: 50%; /* Make the profile photo circular */
+    border: 6px solid #232037; /* Optional: Add a border to the profile photo */
+  }
+  .cover-photo img{
+    width: 100%;
+    height: 100%;
+    border:  solid 2px #232037 ;
+    border-radius: 0 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  }
+  .profile-photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border-style: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  }
+.user-name{
+    color: white;
+    text-align: center;
+    margin-top: 3rem;
+    color: #FFF;
+text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.userid{
+    color: #1da1f2;
+font-family: Inter;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+}
+.banner-info{
+    display: flex;
+    margin: 1rem;
+    justify-content: space-around;
+    color: white;
+    color: #FFF;
+font-family: Inter;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 600;
+
+}
+.change-info{
+ margin-top: 0.5rem;
+    color: #1da1f2;
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+}
+.divider{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1px;
+    background-color: #ABABAB;
+}
+
+.banner-info-comp span{
+  font-size: 0.5rem;
+  color: #ABABAB;
+}
+
+.suggestion-heading{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: white;
+}
+.view-all{
+    color: #FE754D;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.user-1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: center;
+    color: #ABABAB;
+}
+.user-1-details{
+    display: flex;
+    
+    
+}
+.user-1-pic{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #ABABAB;
+    margin-right: 0.5rem;
+    border-radius: 50px;
+}
+.user-info-name{
+    font-size: medium;
+}
+.user-info-id{
+    font-size: small;
+    color: #FE754D;
+}
+
+.follow-btn{
+    font-size: larger;
+    color: #FE754D;
+}

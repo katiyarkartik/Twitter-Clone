@@ -6,6 +6,8 @@ import { AiFillAppstore } from "react-icons/ai";
 import AddTweet from "../components/AddTweet";
 import Tweet from "../components/Tweet";
 import { useNavigate } from "react-router-dom";
+import konnect from "../images/Konnect.png";
+import { Link } from "react-router-dom";
 const Homepage = ({ pic, name, phonenumber }) => {
   let navigate = useNavigate();
   async function handlelogout() {
@@ -15,14 +17,17 @@ const Homepage = ({ pic, name, phonenumber }) => {
   return (
     <div className="homepage">
       <div className="home-heading">
+        <div className="logo">
+          <img src={konnect} alt="Logo" />
+        </div>
         <p>
-          <AiFillAppstore />
-        </p>
-        <p>Home</p>
-        <p>
-          <HiOutlineLogout onClick={handlelogout} />
+          <Link to="/nav">
+            {" "}
+            <AiFillAppstore />
+          </Link>
         </p>
       </div>
+
       <AddTweet img={pic} name={name} phonenumber={phonenumber} />
       <br />
       <div className="hr-bottom"></div>

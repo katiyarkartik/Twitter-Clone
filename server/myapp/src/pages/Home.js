@@ -42,10 +42,12 @@ const Home = () => {
                 <span>Profile</span>
               </li>
             </Link>
-            <li>
-              <FiHash />
-              <span>Explore</span>
-            </li>
+            <Link to={"/explore"}>
+              <li>
+                <FiHash />
+                <span>Explore</span>
+              </li>
+            </Link>
             <li>
               <BsBell />
               <span>Notifications</span>

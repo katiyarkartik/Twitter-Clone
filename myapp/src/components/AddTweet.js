@@ -55,7 +55,7 @@ const AddTweet = ({ img, name, phonenumber }) => {
           />
         </div>
       </div>
-      <div className="divider"></div>
+
       <p className="add-box-additionals">
         <div className="img-box">
           <input
@@ -66,7 +66,7 @@ const AddTweet = ({ img, name, phonenumber }) => {
         </div>
         <div>
           <div className="tweet-btn-post">
-            <button onClick={addTweetData}>Tweet</button>
+            <button onClick={addTweetData}>Post</button>
           </div>
         </div>
       </p>
