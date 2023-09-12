@@ -1,10 +1,10 @@
 import React from "react";
 import "./Login.css";
 import { GrTwitter, GrApple } from "react-icons/gr";
-import img1 from "../src/images/img1.svg";
+import img1 from "./images/img1.svg";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate, Link } from "react-router-dom";
-import konnect from "../src/images/Konnect.png"
+import konnect from "./images/Konnect.png"
 const Login = () => {
   const navigate = useNavigate();
   const handleLogin = () => {

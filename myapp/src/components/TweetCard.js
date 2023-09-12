@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TweetCard.css";
-import { BsSuitHeart ,BsBookmarkDash} from "react-icons/bs";
+import { BsSuitHeart, BsBookmarkDash } from "react-icons/bs";
 import { RiArrowLeftRightLine } from "react-icons/ri";
-import  {FaRegCommentDots} from "react-icons/fa";
-import {AiOutlineHeart} from "react-icons/ai";
+import { FaRegCommentDots } from "react-icons/fa";
+import { AiOutlineHeart } from "react-icons/ai";
 import Com from "./Com";
 
-const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl, date}) => {
-  var comdata=phonenumber+date;
+const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl, date }) => {
+  const userInfo = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
+  const handleDelete = () => {
+    console.log("post Deleted")
+  }
+  console.log(userInfo.phonenumber, phonenumber);
+  const renderDeleteOption = () => {
+    if (userInfo.phonenumber === phonenumber) {
+      return (
+        <li
+          style={{ color: "red", fontSize: "16px", fontWeight: "600", cursor:"pointer" }}
+          onClick={handleDelete}
+        >
+          Delete Post
+        </li>
+      );
+    }
+    return null;
+  };
+
+  var comdata = phonenumber + date;
+  var a = 0;
   return (
     <div className="tweetcard">
-      <div>
+      <div className="tweet-user-info">
         <div className="tweet-data">
           <div className="user-pic">
             <img src={img} alt="" />
@@ -40,13 +62,13 @@ const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl, date}) => {
       <div>
         <ul className="like-comment">
           <li>
-            <AiOutlineHeart /><span>230</span>
+            <AiOutlineHeart />
+            <span></span>
           </li>
           <li>
-           
-            <Com comdata={comdata}/>
+            <Com comdata={comdata} />
           </li>
-          
+          {renderDeleteOption()}
         </ul>
       </div>
       <br />
@@ -56,3 +78,4 @@ const TweetCard = ({ name, phonenumber, img, tweet, addimgUrl, date}) => {
 };
 
 export default TweetCard;
+

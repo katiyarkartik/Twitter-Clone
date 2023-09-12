@@ -16,7 +16,7 @@ const Homepage = ({ pic, name, phonenumber }) => {
   }
   return (
     <div className="homepage">
-      <div className="home-heading">
+      {/* <div className="home-heading">
         <div className="logo">
           <img src={konnect} alt="Logo" />
         </div>
@@ -26,7 +26,7 @@ const Homepage = ({ pic, name, phonenumber }) => {
             <AiFillAppstore />
           </Link>
         </p>
-      </div>
+      </div> */}
 
       <AddTweet img={pic} name={name} phonenumber={phonenumber} />
       <br />

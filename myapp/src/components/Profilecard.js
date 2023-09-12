@@ -34,9 +34,9 @@ const Profilecard = () => {
           </div>
         </div>
         <div className="divider"></div>
-        <div className="change-info">
+        {/* <div className="change-info">
           <BiEditAlt /> change info
-        </div>
+        </div> */}
       </div>
       <div className="sgp">
         <div className="suggestion-heading">

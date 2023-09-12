@@ -44,13 +44,29 @@ function PhoneSIgnUp() {
     } else if (confirm !== password) {
       alert("Passwords do not match");
     } else {
-      const {data} = await axios.post("/register", bodyobj, config);
+      // const {data} = await axios.post("/register", bodyobj, config);
 
+      try {
+        const { data } = await axios.post("/register", bodyobj, config);
+    
+        if (data.status === "ok") {
+          alert("Successfully registered. Click ok to go to Login Page");
+          navigate("/", { replace: true });
+          
+        } else {
+          
+          alert("Username already exists. Please choose a different username.");
+          
+        }
+      } catch (error) {
+        console.error("Error during registration:", error);
+      }
+    
      
 
-      console.log(data);
-      alert("Successfully registered. Click ok to go to Login Page");
-      navigate("/", { replace: true });
+      // console.log(data);
+      // alert("Successfully registered. Click ok to go to Login Page");
+      
     }
   }
   return (

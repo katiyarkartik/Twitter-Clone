@@ -8,7 +8,7 @@ import {
   AiOutlineBell,
   AiOutlineSetting,
   AiOutlineLogout,
-} from "react-icons/ai"; 
+} from "react-icons/ai";
 import { MdEmojiPeople } from "react-icons/md";
 import "./Navbar.css";
 import konnect from "../images/Konnect.png";
@@ -16,23 +16,20 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "./AppContext";
 const Navbar = () => {
-
   const { setActiveComponent } = useAppContext();
 
   // const handleNavigation = (componentName) => {
   //   setActiveComponent(componentName);
   // }
-  
+
   const [activeItem, setActiveItem] = useState("home");
 
   const handleItemClick = (item) => {
     console.log(item);
     setActiveItem(item);
     setActiveComponent(item);
-
   };
 
-  
   let navigate = useNavigate();
   const userInfo = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
@@ -61,49 +58,47 @@ const Navbar = () => {
           className={`nav-item ${activeItem === "home" ? "active" : ""}`}
           onClick={() => handleItemClick("home")}
         >
-          <AiOutlineHome />
-          <span>Home</span>
+          <Link to="/home">
+            <AiOutlineHome />
+            <span> Home</span>
+          </Link>
         </div>
 
         <div
           className={`nav-item ${activeItem === "messages" ? "active" : ""}`}
           onClick={() => handleItemClick("messages")}
         >
-          <AiOutlineMessage />
-          <span>Messages</span>
+          {" "}
+          <Link to="/home">
+            <AiOutlineMessage />
+
+            <span>Messages</span>
+          </Link>
         </div>
 
         <div
-          className={`nav-item ${activeItem === "friends" ? "active" : ""}`}
-          onClick={() => handleItemClick("friends")}
+          className={`nav-item ${activeItem === "news" ? "active" : ""}`}
+          onClick={() => handleItemClick("news")}
         >
-          <MdEmojiPeople />
-          <span>Friends</span>
+          {" "}
+          <Link to="/home">
+            <MdEmojiPeople />
+            <span>News</span>
+          </Link>
         </div>
 
         <div
           className={`nav-item ${activeItem === "bookmarks" ? "active" : ""}`}
           onClick={() => handleItemClick("bookmarks")}
         >
-          <AiOutlineBook />
-          <span>Bookmarks</span>
+          {" "}
+          <Link to="/home">
+            <AiOutlineBook />
+            <span>Bookmarks</span>
+          </Link>
         </div>
-        <div
-          className={`nav-item ${activeItem === "communities" ? "active" : ""}`}
-          onClick={() => handleItemClick("communities")}
-        >
-          <AiOutlineUsergroupAdd />
-          <span>Communities</span>
-        </div>
-        <div
-          className={`nav-item ${
-            activeItem === "notifications" ? "active" : ""
-          }`}
-          onClick={() => handleItemClick("notifications")}
-        >
-          <AiOutlineBell />
-          <span>Notifications</span>
-        </div>
+        
+      
         <div
           className={`nav-item ${activeItem === "settings" ? "active" : ""}`}
           onClick={() => handleItemClick("settings")}

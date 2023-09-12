@@ -19,17 +19,15 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    addimgUrl: {
-      type: String,
-    },
     date: {
       type: String,
       required: true,
     },
-    like:{
-      type:Number,
-      
+    addimgUrl: {
+      type: String,
     }
+   
+   
   },
   // { timestamps: true },
   { collection: "postInfo" }

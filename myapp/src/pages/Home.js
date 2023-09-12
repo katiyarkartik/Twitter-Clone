@@ -21,26 +21,40 @@ import Profilepage from "../components/Profilepage";
 
 import { useAppContext } from "../components/AppContext";
 import Settings from "../components/Settings";
+import Friends from "../components/Friends";
+import MobileNav from "../components/MobileNav";
 // import { useData } from "../components/DataContext";
 const Home = () => {
-
   const { activeComponent } = useAppContext();
-
 
   const renderActiveComponent = () => {
     switch (activeComponent) {
-      case 'home':
-        return <Homepage />;
-      case 'settings':
-        return <Settings/>;
-      case 'friends':
-        return <Homepage />;
-      case 'messages':
+      case "home":
+        return (
+          <Homepage
+            pic={userInfo.img}
+            name={userInfo.name}
+            phonenumber={userInfo.phonenumber}
+          />
+        );
+      case "settings":
+        return <Settings />;
+      case "friends":
+        return <Friends />;
+      case "messages":
         return <Chats />;
+      case "news":
+        return <News />;
       default:
-        return <Settings/>;
+        return (
+          <Homepage
+            pic={userInfo.img}
+            name={userInfo.name}
+            phonenumber={userInfo.phonenumber}
+          />
+        );
     }
-  }
+  };
 
   let navigate = useNavigate();
   // const [userInfo, setUserInfo] = useState();
@@ -52,7 +66,7 @@ const Home = () => {
     navigate("/");
   }
   const [page, setpage] = useState("home");
-  
+
   console.log(page + "hello");
 
   // setpage(page);
@@ -103,7 +117,7 @@ const Home = () => {
               <span>More</span>
             </li>
           </ul> */}
-            <Navbar  />
+            <Navbar />
 
             {/* <div className="tweet-btn">
             <button onClick={logout}>Logout</button>
@@ -121,7 +135,8 @@ const Home = () => {
           </div>
           <div className="vl"></div>
           <div className="center">
-          {renderActiveComponent()}
+            <MobileNav />
+            {renderActiveComponent()}
           </div>
           <div className="vl"></div>
           <div className="right-menu">

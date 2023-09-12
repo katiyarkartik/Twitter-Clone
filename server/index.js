@@ -164,25 +164,11 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-
 //Conversation
 
-
-
-app.post('/conversation', async(req,res)=>{
-
-});
-
-
-
-
-
-
-
+app.post("/conversation", async (req, res) => {});
 
 //
-
-
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("myapp/build"));

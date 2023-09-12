@@ -29,15 +29,39 @@ function PhoneSIgnUp() {
     };
 
     event.preventDefault();
-    const { data } = await axios.post("/login", bodyobj, config);
+    // const { data } = await axios.post(
+    //   "/login",
+    //   bodyobj,
+    //   config
+    // );
 
-    console.log(data);
-    if (data.status == "ok") {
-      alert("login successfull");
-      window.localStorage.setItem("userInfo", JSON.stringify(data.data));
-      window.location.href = "./home";
+    // console.log(data);
+    // if (data.status == "ok") {
+    //   alert("login successfull");
+    //   window.localStorage.setItem("userInfo", JSON.stringify(data.data));
+    //   window.location.href = "./home";
+    // }
+
+    
+    try {
+      const { data } = await axios.post("/login", bodyobj, config);
+  
+      if (data.status === "ok") {
+        alert("Login successful");
+        window.localStorage.setItem("userInfo", JSON.stringify(data.data));
+        window.location.href = "./home";
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        alert("Invalid credentials. Please try again.");
+      } else {
+        console.error("Error during login:", error);
+      }
     }
-  }
+
+////
+  
+  }////
   return (
     <div className="phone-signup">
       <div className="signup-form">

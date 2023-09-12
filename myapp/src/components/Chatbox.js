@@ -256,14 +256,7 @@ const Chatbox = () => {
             <div className="messages-box">
               <div className="send-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quos sint. Repudiandae impedit at minima molestias beatae, maiores quae. Ab minima laudantium magni sed dolor placeat cupiditate, eius repellat inventore magnam ad odio numquam reiciendis maiores consequuntur ipsum, aspernatur praesentium officia! Sed provident suscipit dicta consectetur molestias ex excepturi ipsum in modi voluptatum veniam eos rerum necessitatibus natus ratione quia dolorem alias nam porro non est exercitationem, vitae praesentium aut? Ullam voluptatem dolorem itaque voluptatibus aspernatur officiis, illo maxime nam eos. Neque, doloribus porro quia cumque magni optio voluptas maxime rem iure ipsam laborum deleniti vero a ut explicabo qui.</div>
               <div className="recieve-msg">Lorem ipsum dolor sit amet,</div>
-              <div className="send-msg"></div>
-              <div className="recieve-msg"></div>
-              <div className="send-msg"></div>
-              <div className="recieve-msg"></div>
-              <div className="send-msg"></div>
-              <div className="recieve-msg"></div>
-              <div className="send-msg"></div>
-              <div className="recieve-msg"></div>
+              
             </div>
             <div className="type-box">
               <input type="text" name="" placeholder="Message" id="" />
