@@ -6,7 +6,7 @@ const News = () => {
   useEffect(() => {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3e59019ce7794ba0b21e5b88507f47f0"
+        process.env.NEWS_API
       )
       .then((res) => {
         console.log(res.data.articles);
