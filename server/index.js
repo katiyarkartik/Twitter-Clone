@@ -127,12 +127,12 @@ app.post("/addtweet", async (req, res) => {
 app.get("/gettweets", async (req, res) => {
   Tweet.find({}, function (err, tweet) {
     if (err) console.warn(err);
-    console.log(tweet);
+    // console.log(tweet);
     return res.json(tweet);
   }).sort({ date: -1 });
 });
 
-//comments
+
 require("./models/commentmodel");
 
 const Com = mongoose.model("commentInfo");
@@ -156,7 +156,7 @@ app.post("/addcomment", async (req, res) => {
 
 app.get("/comments", async (req, res) => {
   try {
-    const comments = await Com.find(); // Fetch all comments from the database
+    const comments = await Com.find(); 
     res.json(comments);
   } catch (error) {
     console.error("Error fetching comments:", error);
@@ -164,11 +164,13 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-//Conversation
+//delete tweet
 
-app.post("/conversation", async (req, res) => {});
 
-//
+
+
+
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("myapp/build"));
@@ -183,4 +185,5 @@ if (process.env.NODE_ENV === "production") {
 
 app.listen(PORT, (req, res) => {
   console.log("running on port 8000");
+ 
 });

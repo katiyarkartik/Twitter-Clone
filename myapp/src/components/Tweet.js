@@ -19,18 +19,7 @@ const Tweet = () => {
       .then((result) => settweets(result));
   }, []);
 
-  const handleDeleteTweet = async (deletedTweetId) => {
-    try {
-      // Make a DELETE request to delete the tweet by its _id
-      await axios.delete(`/deletetweet/${deletedTweetId}`);
-      // After successful deletion, update the UI by removing the deleted tweet
-      settweets((prevTweets) =>
-        prevTweets.filter((tweet) => tweet._id !== deletedTweetId)
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  };
+ 
   return (
     <div>
       {tweets.map((tweet) => (
@@ -42,7 +31,7 @@ const Tweet = () => {
           addimgUrl={tweet.addimgUrl}
           date={tweet.date}
           // Use _id as the unique identifier
-          onDelete={handleDeleteTweet} // Pass the delete callback
+       // Pass the delete callback
         />
       ))}
     </div>
